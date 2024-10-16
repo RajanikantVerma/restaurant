@@ -11,8 +11,8 @@ public class Item {
 		this.description = description;
 		this.price = price;
 	}
-	@Id
-	@GeneratedValue
+//	@Id
+//	@GeneratedValue
 	Integer id;
 	String name;
 	String description;
@@ -51,6 +51,10 @@ public class Item {
 		this.name = name;
 		this.description = description;
 		this.price = price;
+	}
+	public Item() {
+		super();
+		// TODO Auto-generated constructor stub
 	} 
 	
 	

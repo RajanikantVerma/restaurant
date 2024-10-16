@@ -1,5 +1,6 @@
 package com.restaurants.le.demo.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -9,9 +10,17 @@ import com.restaurants.le.demo.model.Item;
 @Component
 public class RestaurantMenu {
 	
-	Item item1 = new Item("fist", "first Item", 100);
-	Item item2 = new Item("second", "second Item", 1000);
-	List<Item> list = List.of(item1,item2);
+	Item item1 = new Item(1,"fist", "first Item", 100);
+	Item item2 = new Item(2,"second", "second Item", 1000);
+	
+	
+	public RestaurantMenu() {
+		list.add(item2);
+		list.add(item1);
+	}
+
+	List<Item> list = new ArrayList<>();
+	
 
 	
 	public List<Item> getAllItems(){
@@ -19,6 +28,8 @@ public class RestaurantMenu {
 	}
 	
 	public List<Item> addItem(Item item){
+		int last = list.get(list.size()-1).getId();
+		item.setId(last+1);
 		list.add(item);
 		return list;
 	}

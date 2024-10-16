@@ -30,7 +30,7 @@ public class RestaurantMenuController {
 		return service.getAllItems();
 	}
 	
-	@GetMapping("/{name}")
+	@GetMapping()
 	public Item getAllItems(@RequestParam String name){
 		return service.getItem(name);
 	}
