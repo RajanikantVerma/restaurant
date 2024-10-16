@@ -15,4 +15,9 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+.factorypath
+.gitattributes
 .settings
+mvnw.cmd
+mvnw
+.mvm
