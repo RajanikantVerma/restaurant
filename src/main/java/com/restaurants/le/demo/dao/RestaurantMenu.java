@@ -10,8 +10,8 @@ import com.restaurants.le.demo.model.Item;
 @Component
 public class RestaurantMenu {
 	
-	Item item1 = new Item(1,"fist", "first Item", 100);
-	Item item2 = new Item(2,"second", "second Item", 1000);
+	Item item1 = new Item(1,"Vegetable Pakora","Starters","5.00","Veg");
+	Item item2 = new Item(2,"non veg Pakora","Starters","15.00","non-Veg");
 	
 	
 	public RestaurantMenu() {

@@ -1,22 +1,20 @@
 package com.restaurants.le.demo.model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-
+@Entity
 public class Item {
 	
-	public Item(String name, String description, int price) {
-		this.name = name;
-		this.description = description;
-		this.price = price;
-	}
-//	@Id
-//	@GeneratedValue
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
 	String name;
 	String description;
-	Integer price;
+	String price;
+	String type;
 	public Integer getId() {
 		return id;
 	}
@@ -35,27 +33,34 @@ public class Item {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Integer getPrice() {
+	public String getPrice() {
 		return price;
 	}
-	public void setPrice(Integer price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
-	@Override
-	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + "]";
+	public String getType() {
+		return type;
 	}
-	public Item(Integer id, String name, String description, Integer price) {
+	public void setType(String type) {
+		this.type = type;
+	}
+	public Item(Integer id, String name, String description, String price, String type) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.price = price;
+		this.type = type;
 	}
 	public Item() {
 		super();
 		// TODO Auto-generated constructor stub
-	} 
-	
+	}
+	@Override
+	public String toString() {
+		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", type="
+				+ type + "]";
+	}
 	
 }
